@@ -23,7 +23,7 @@ class TanancyTables extends Migration
         Schema::create('tenancy_users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('role');
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->integer('tenancy_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');
